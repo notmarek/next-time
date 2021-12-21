@@ -21,7 +21,7 @@ async function getAnime(anime_slug) {
 }
 
 async function getEpisodes(anime_id) {
-    let page = fetch("https://ajax.gogo-load.com/ajax/load-list-episode?ep_start=0&ep_end=99999&id=" + anime_id, {
+    let page = await fetch("https://ajax.gogo-load.com/ajax/load-list-episode?ep_start=0&ep_end=99999&id=" + anime_id, {
         headers: {
             "User-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0",
         }
