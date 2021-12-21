@@ -16,7 +16,7 @@ async function getAnime(anime_slug) {
     return {
         name: $("div.anime_info_body_bg>h1").text(),
         cover: $("div.anime_info_body_bg>img").attr("src"),
-        episodes: await getEpisodes($("input#anime_id").attr("value")),
+        episodes: await getEpisodes($("input#movie_id").attr("value")),
     };
 }
 
@@ -29,11 +29,11 @@ async function getEpisodes(anime_id) {
     let html = await page.text();
     let $ = cheerio.load(html);
     let result = [];
-    for (ep of $("ul.episode_related").children()) {
+    for (const ep of $("ul").children()) {
         result.push({
             name: $(ep).find("a>div.name").text(),
-            link: $(ep).find("a").attr("href"),
+            id: $(ep).find("a").attr("href").replace(" /", ""),
         })
     }
-    return result;
+    return result.sort();
 }
