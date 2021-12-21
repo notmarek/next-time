@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 }
 
 async function getAnime(anime_slug) {
-    let page = fetch("https://www1.gogoanime.cm/category/" + anime_slug, {
+    let page = await fetch("https://www1.gogoanime.cm/category/" + anime_slug, {
         headers: {
             "User-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0",
         }
