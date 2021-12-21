@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
     if (typeof document == "undefined") {
@@ -23,14 +23,14 @@ export default function Home() {
             "hentai",
             "nigger",
         ];
-        setTimeout(()=> {
-          document.getElementById("nt").onmouseover = (e) => {
-            e.target.innerText = "I am gonna kill myself!";
-          }
-          document.getElementById("nt").onmouseleave = (e) => {
-            e.target.innerText = "Next time!";
-          }
-        }, 500)
+        setTimeout(() => {
+            document.getElementById("nt").onmouseover = (e) => {
+                e.target.innerText = "I am gonna kill myself!";
+            };
+            document.getElementById("nt").onmouseleave = (e) => {
+                e.target.innerText = "Next time!";
+            };
+        }, 500);
         setInterval(() => {
             if (its.length <= cur + 1) {
                 cur = 0;
@@ -65,21 +65,25 @@ export default function Home() {
                 </p>
 
                 <div className={styles.grid}>
-                    <a href="/recent" className={styles.card}>
-                        <h2>Recent Anime &rarr;</h2>
-                        <p>
-                            Find recently released anime, dubbed anime and even
-                            chinee anime.
-                        </p>
-                    </a>
+                    <Link href="/recent">
+                        <a className={styles.card}>
+                            <h2>Recent Anime &rarr;</h2>
+                            <p>
+                                Find recently released anime, dubbed anime and
+                                even chinee anime.
+                            </p>
+                        </a>
+                    </Link>
 
-                    <a href="/browse" className={styles.card}>
-                        <h2>Browse &rarr;</h2>
-                        <p>
-                            Browse all the anime available on your favorite site
-                            called gogoanime.
-                        </p>
-                    </a>
+                    <Link href="/browse">
+                        <a className={styles.card}>
+                            <h2>Browse &rarr;</h2>
+                            <p>
+                                Browse all the anime available on your favorite
+                                site called gogoanime.
+                            </p>
+                        </a>
+                    </Link>
                 </div>
             </main>
 
