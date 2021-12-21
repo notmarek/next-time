@@ -50,7 +50,7 @@ export default function Home() {
                 </h1>
 
                 <p className={styles.description}>
-                    Get started by watching{" "}
+                    Get started by watching some{" "}
                     <code className={styles.code} id="your-mom">
                         porn
                     </code>{" "}
