@@ -16,7 +16,7 @@ async function getAnime(anime_slug) {
     return {
         name: $("div.anime_info_body_bg>h1").text(),
         cover: $("div.anime_info_body_bg>img").attr("src"),
-        episodes: getEpisodes($("input#anime_id").attr("value")),
+        episodes: await getEpisodes($("input#anime_id").attr("value")),
     };
 }
 
