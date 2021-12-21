@@ -23,7 +23,14 @@ export default function Home() {
             "hentai",
             "nigger",
         ];
-
+        setTimeout(()=> {
+          document.getElementById("nt").onmouseover = (e) => {
+            e.target.innerText = "I am gonna kill myself!";
+          }
+          document.getElementById("nt").onmouseleave = (e) => {
+            e.target.innerText = "Next time!";
+          }
+        }, 500)
         setInterval(() => {
             if (its.length <= cur + 1) {
                 cur = 0;
@@ -44,7 +51,7 @@ export default function Home() {
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     Welcome to{" "}
-                    <a href="https://github.com/notmarek/next-time">
+                    <a id="nt" href="https://github.com/notmarek/next-time">
                         Next-time!
                     </a>
                 </h1>
