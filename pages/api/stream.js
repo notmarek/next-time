@@ -16,6 +16,7 @@ async function getServers(episode) {
     let $ = cheerio.load(html);
     let servers = $("div.anime_muti_link>ul").children();
     let result = [];
+    console.log(html);
     for (const srv of servers) {
         result.push({
             name: $(srv).find("a").text().replace("\n", "").replaceAll(" ", "").replace("Choosethisserver", ""),
