@@ -18,7 +18,7 @@ async function getServers(episode) {
     let result = [];
     for (const srv of servers) {
         result.push({
-            name: $(srv).find("a").text().replace(/\s/, "").replace("Choosethisserver", ""),
+            name: $(srv).find("a").text().replace(/\s/, "").replace("Choose", "").replace("this", "").replace("server", ""),
             iframe: $(srv).find("a").attr("data-video"),
         });
     }
