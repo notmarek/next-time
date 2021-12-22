@@ -48,8 +48,8 @@ export default function Stream() {
                     {streams}
                 </select>
                 
-                <div className={styles.grid}>
-                   <iframe src={stream} style={{width: "1080px", height: "720px"}} allowFullScreen="true" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
+                <div className={styles.player}>
+                   <iframe src={stream} allowFullScreen="true" frameBorder="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
                 </div>
             </main>
 
